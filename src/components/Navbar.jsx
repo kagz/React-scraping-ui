@@ -5,16 +5,19 @@ import AppBar from '@material-ui/core/AppBar';
 import Toolbar from '@material-ui/core/Toolbar';
 import IconButton from '@material-ui/core/IconButton';
 import Typography from '@material-ui/core/Typography';
-import InputBase from '@material-ui/core/InputBase';
+import LockOpenOutlinedIcon from '@material-ui/icons/LockOpenOutlined';
 import Badge from '@material-ui/core/Badge';
 import MenuItem from '@material-ui/core/MenuItem';
 import Menu from '@material-ui/core/Menu';
 import MenuIcon from '@material-ui/icons/Menu';
-import SearchIcon from '@material-ui/icons/Search';
+import ListItemIcon from '@material-ui/core/ListItemIcon';
 import AccountCircle from '@material-ui/icons/AccountCircle';
 import MailIcon from '@material-ui/icons/Mail';
 import NotificationsIcon from '@material-ui/icons/Notifications';
 import MoreIcon from '@material-ui/icons/MoreVert';
+import SupervisorAccountOutlinedIcon from '@material-ui/icons/SupervisorAccountOutlined';
+import ExitToAppSharpIcon from '@material-ui/icons/ExitToAppSharp';
+
 
 const useStyles = makeStyles((theme) => ({
   grow: {
@@ -117,11 +120,42 @@ function Navbar() {
       open={isMenuOpen}
       onClose={handleMenuClose}
     >
-      <MenuItem onClick={handleMenuClose} component={Link} to="/profile">Profile</MenuItem>
-      <MenuItem onClick={handleMenuClose} component={Link} to="/account">My account</MenuItem>
-      <MenuItem onClick={handleMenuClose} component={Link} to="/login">Login</MenuItem>
-      <MenuItem onClick={handleMenuClose} component={Link} to="/signup">Signup</MenuItem>
-      <MenuItem onClick={handleMenuClose} component={Link} to="/">Logout</MenuItem>
+      
+
+      <MenuItem onClick={handleMenuClose} component={Link} to="/profile">
+          <ListItemIcon >
+            <SupervisorAccountOutlinedIcon fontSize="small" />
+          </ListItemIcon>
+          <Typography variant="inherit" noWrap>
+          Profile
+          </Typography>
+        </MenuItem>
+
+
+
+
+        
+      <MenuItem onClick={handleMenuClose} component={Link} to="/login">
+          <ListItemIcon >
+            <LockOpenOutlinedIcon fontSize="small" />
+          </ListItemIcon>
+          <Typography variant="inherit" noWrap>
+         Login
+          </Typography>
+        </MenuItem>
+
+
+
+        
+      <MenuItem onClick={handleMenuClose} component={Link} to="/">
+          <ListItemIcon >
+            <ExitToAppSharpIcon fontSize="small" />
+          </ListItemIcon>
+          <Typography variant="inherit" noWrap>
+          Logout
+          </Typography>
+        </MenuItem>
+
     </Menu>
   );
 

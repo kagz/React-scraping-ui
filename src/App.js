@@ -1,8 +1,7 @@
 import React from 'react';
 import {BrowserRouter as Router ,Route, Switch} from 'react-router-dom';
-
-import MuiThemeProvider from '@material-ui/core/styles/MuiThemeProvider';
-import createMuiTheme from '@material-ui/core/styles/createMuiTheme';
+import MuiThemeProvider from '@material-ui/core/styles/MuiThemeProvider'
+import { createMuiTheme } from '@material-ui/core/styles/createMuiTheme';
 import './App.css';
 
 import Navbar from './components/Navbar';
@@ -14,10 +13,15 @@ import Profile from './pages/Profile';
 import Notifications from './pages/Notifications'
 import Account from './pages/Account'
 
-// const theme = createMuiTheme()
+// const theme = createMuiTheme({
+
+
+// })
+
+
 function App() {
   return (
- <MuiThemeProvider>
+ <MuiThemeProvider >
  <Router>
  <Navbar/>
       <div className="container">
