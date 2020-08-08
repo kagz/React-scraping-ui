@@ -7,6 +7,7 @@ import WhatshotTwoToneIcon from '@material-ui/icons/WhatshotTwoTone';
 import BookmarksIcon from '@material-ui/icons/Bookmarks';
 import FiberNewTwoToneIcon from '@material-ui/icons/FiberNewTwoTone';
 import MarkunreadMailboxTwoToneIcon from '@material-ui/icons/MarkunreadMailboxTwoTone';
+import ParallaxCarousel from '../components/carousel/parallax';
 import Typography from "@material-ui/core/Typography";
 import Box from "@material-ui/core/Box";
 import Posts from "../components/Posts";
@@ -30,6 +31,32 @@ function TabPanel(props) {
   );
 }
 
+const data = [
+  {
+    id: 1,
+    title: 'Huarache',
+    subtitle: 'Gripp',
+    image:
+      // eslint-disable-next-line max-len
+      'https://firebasestorage.googleapis.com/v0/b/mui-treasury.appspot.com/o/public%2Fshoes%2Fair-huarache-gripp.png?alt=media',
+  },
+  {
+    id: 2,
+    title: 'Air Max',
+    subtitle: '270 P',
+    image:
+      // eslint-disable-next-line max-len
+      'https://firebasestorage.googleapis.com/v0/b/mui-treasury.appspot.com/o/public%2Fshoes%2Fair-max-270.png?alt=media',
+  },
+  {
+    id: 3,
+    title: 'Air Max',
+    subtitle: 'Deluxe',
+    image:
+      // eslint-disable-next-line max-len
+      'https://firebasestorage.googleapis.com/v0/b/mui-treasury.appspot.com/o/public%2Fshoes%2Fair-max-deluxe.png?alt=media',
+  },
+];
 TabPanel.propTypes = {
   children: PropTypes.node,
   index: PropTypes.any.isRequired,
@@ -60,7 +87,14 @@ function HomePage() {
 
   return (
     <div className={classes.root}>
+
+<Box height={'50%'} width={'100%'} maxWidth={840} mx={'auto'} padding={'30px'}>
+      <ParallaxCarousel data={data} />
+    </Box>
       <div position="static" color="default">
+
+     
+
         <Tabs
           value={value}
           onChange={handleChange}
