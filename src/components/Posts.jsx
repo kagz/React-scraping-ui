@@ -5,12 +5,15 @@ import Typography from "@material-ui/core/Typography";
 import IconButton from "@material-ui/core/IconButton";
 import Paper from "@material-ui/core/Paper";
 import List from "@material-ui/core/List";
-import ListItem from "@material-ui/core/ListItem";
-import ListItemAvatar from "@material-ui/core/ListItemAvatar";
-import ListItemText from "@material-ui/core/ListItemText";
+
 import ListSubheader from "@material-ui/core/ListSubheader";
 import Avatar from "@material-ui/core/Avatar";
-import ListItemSecondaryAction from "@material-ui/core/ListItemSecondaryAction";
+import Card from '@material-ui/core/Card';
+import CardHeader from '@material-ui/core/CardHeader';
+import CardContent from '@material-ui/core/CardContent';
+import CardActions from '@material-ui/core/CardActions';
+import { red } from '@material-ui/core/colors';
+import VisibilityOutlinedIcon from '@material-ui/icons/VisibilityOutlined';
 import CommentIcon from "@material-ui/icons/Comment";
 
 const messages = [
@@ -81,23 +84,26 @@ const messages = [
       marginBottom: theme.spacing(2)
     },
     subheader: {
-      backgroundColor: theme.palette.background.paper
+      backgroundColor: theme.palette.background.paper,
+      marginBottom:20
     },
     appBar: {
       top: "auto",
       bottom: 0
     },
-    grow: {
-      flexGrow: 1
+    card: {
+      // flexGrow: 1,
+      // display:'flex',
+      marginBottom:20
+      
     },
-    fabButton: {
-      position: "absolute",
-      zIndex: 1,
-      top: -30,
-      left: 0,
-      right: 0,
-      margin: "0 auto"
-    }
+    expand: {
+      marginLeft: 'auto',
+  
+   },
+   avatar: {
+     backgroundColor: red[500],
+   },
   }));
 function Posts() {
     const classes = useStyles();
@@ -107,7 +113,7 @@ function Posts() {
         <CssBaseline />
         <Paper square className={classes.paper}>
           <Typography className={classes.text} variant="h5" gutterBottom>
-            Inbox
+            All Posts
           </Typography>
           <List className={classes.list}>
             {messages.map(({ id, primary, secondary, person }) => (
@@ -122,17 +128,42 @@ function Posts() {
                     Yesterday
                   </ListSubheader>
                 )}
-                <ListItem button>
-                  <ListItemAvatar>
-                    <Avatar alt="Profile Picture" src={person} />
-                  </ListItemAvatar>
-                  <ListItemText primary={primary} secondary={secondary} />
-                  <ListItemSecondaryAction>
-                    <IconButton edge="end" aria-label="comments">
-                      <CommentIcon />
-                    </IconButton>
-                  </ListItemSecondaryAction>
-                </ListItem>
+               
+               <Card className={classes.card} >
+      <CardHeader
+        avatar={
+          <Avatar aria-label="recipe" className={classes.avatar}>
+            R
+          </Avatar>
+        }
+        // action={
+        //   <IconButton aria-label="settings">
+        //     <MoreVertIcon />
+        //   </IconButton>
+        // }
+        title={primary}
+        subheader="September 14, 2016"
+      />
+  
+      <CardContent>
+        <Typography variant="body2" color="textSecondary" component="p">
+          {secondary}.
+        </Typography>
+      </CardContent>
+
+      <CardActions disableSpacing>
+        <IconButton aria-label="add to favorites">
+          <VisibilityOutlinedIcon/>
+        </IconButton>
+
+        <IconButton 
+          className={classes.expand}
+        edge="end" aria-label="comments">
+                    <CommentIcon />
+        </IconButton>
+      </CardActions>
+  
+    </Card>
               </React.Fragment>
             ))}
           </List>
