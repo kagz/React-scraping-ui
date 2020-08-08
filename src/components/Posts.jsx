@@ -5,7 +5,7 @@ import Typography from "@material-ui/core/Typography";
 import IconButton from "@material-ui/core/IconButton";
 import Paper from "@material-ui/core/Paper";
 import List from "@material-ui/core/List";
-
+import BookmarkBorderIcon from '@material-ui/icons/BookmarkBorder';
 import ListSubheader from "@material-ui/core/ListSubheader";
 import Avatar from "@material-ui/core/Avatar";
 import Card from '@material-ui/core/Card';
@@ -112,9 +112,9 @@ function Posts() {
       <React.Fragment>
         <CssBaseline />
         <Paper square className={classes.paper}>
-          <Typography className={classes.text} variant="h5" gutterBottom>
+          {/* <Typography className={classes.text} variant="h5" gutterBottom>
             All Posts
-          </Typography>
+          </Typography> */}
           <List className={classes.list}>
             {messages.map(({ id, primary, secondary, person }) => (
               <React.Fragment key={id}>
@@ -152,8 +152,8 @@ function Posts() {
       </CardContent>
 
       <CardActions disableSpacing>
-        <IconButton aria-label="add to favorites">
-          <VisibilityOutlinedIcon/>
+        <IconButton aria-label="add to bookmarks">
+          <BookmarkBorderIcon/>
         </IconButton>
 
         <IconButton 

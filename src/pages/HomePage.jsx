@@ -3,10 +3,10 @@ import PropTypes from "prop-types";
 import { makeStyles } from "@material-ui/core/styles";
 import Tabs from "@material-ui/core/Tabs";
 import Tab from "@material-ui/core/Tab";
-import PhoneIcon from "@material-ui/icons/Phone";
-import FavoriteIcon from "@material-ui/icons/Favorite";
-import PersonPinIcon from "@material-ui/icons/PersonPin";
-import HelpIcon from "@material-ui/icons/Help";
+import WhatshotTwoToneIcon from '@material-ui/icons/WhatshotTwoTone';
+import BookmarksIcon from '@material-ui/icons/Bookmarks';
+import FiberNewTwoToneIcon from '@material-ui/icons/FiberNewTwoTone';
+import MarkunreadMailboxTwoToneIcon from '@material-ui/icons/MarkunreadMailboxTwoTone';
 import Typography from "@material-ui/core/Typography";
 import Box from "@material-ui/core/Box";
 import Posts from "../components/Posts";
@@ -70,10 +70,10 @@ function HomePage() {
           textColor="primary"
           aria-label="scrollable force tabs example"
         >
-          <Tab label="All Posts" icon={<PhoneIcon />} {...a11yProps(0)} />
-          <Tab label="Fav " icon={<FavoriteIcon />} {...a11yProps(1)} />
-          <Tab label="Trending" icon={<PersonPinIcon />} {...a11yProps(2)} />
-          <Tab label="MMNN" icon={<HelpIcon />} {...a11yProps(3)} />
+          <Tab label="All Posts" icon={<MarkunreadMailboxTwoToneIcon />} {...a11yProps(0)} />
+          <Tab label="to read " icon={<BookmarksIcon />} {...a11yProps(1)} />
+          <Tab label="Trending" icon={<WhatshotTwoToneIcon />} {...a11yProps(2)} />
+          <Tab label="MMNN" icon={<FiberNewTwoToneIcon />} {...a11yProps(3)} />
        
         </Tabs>
       </div>
