@@ -9,6 +9,7 @@ import FiberNewTwoToneIcon from '@material-ui/icons/FiberNewTwoTone';
 import MarkunreadMailboxTwoToneIcon from '@material-ui/icons/MarkunreadMailboxTwoTone';
 import ParallaxCarousel from '../components/carousel/parallax';
 import Typography from "@material-ui/core/Typography";
+import HistoryTwoToneIcon from '@material-ui/icons/HistoryTwoTone';
 import Box from "@material-ui/core/Box";
 import Posts from "../components/Posts";
 function TabPanel(props) {
@@ -75,7 +76,13 @@ const useStyles = makeStyles(theme => ({
     flexGrow: 1,
     width: "100%",
     backgroundColor: theme.palette.background.paper
-  }
+  },
+
+
+
+
+
+
 }));
 function HomePage() {
   const classes = useStyles();
@@ -88,27 +95,28 @@ function HomePage() {
   return (
     <div className={classes.root}>
 
-<Box height={'50%'} width={'100%'} maxWidth={840} mx={'auto'} padding={'30px'}>
+<Box height={'15%'} width={'100%'} maxWidth={840} mx={'auto'} padding={'30px'}>
       <ParallaxCarousel data={data} />
     </Box>
-      <div position="static" color="default">
+      <div position="static" color="default" padding={'30px'}>
 
      
 
         <Tabs
+            width={'100%'}
           value={value}
           onChange={handleChange}
-          variant="scrollable"
+          variant="fullWidth"
           scrollButtons="on"
           indicatorColor="primary"
           textColor="primary"
-          aria-label="scrollable force tabs example"
+          aria-label="homepage tabs"
         >
           <Tab label="All Posts" icon={<MarkunreadMailboxTwoToneIcon />} {...a11yProps(0)} />
           <Tab label="to read " icon={<BookmarksIcon />} {...a11yProps(1)} />
           <Tab label="Trending" icon={<WhatshotTwoToneIcon />} {...a11yProps(2)} />
           <Tab label="MMNN" icon={<FiberNewTwoToneIcon />} {...a11yProps(3)} />
-       
+          <Tab label="History" icon={<HistoryTwoToneIcon />} {...a11yProps(4)} />
         </Tabs>
       </div>
       <TabPanel value={value} index={0}>
@@ -122,6 +130,10 @@ function HomePage() {
       </TabPanel>
       <TabPanel value={value} index={3}>
         Item Four
+      </TabPanel>
+
+      <TabPanel value={value} index={4}>
+        Item Five
       </TabPanel>
      
     </div>

@@ -132,7 +132,7 @@ function Posts() {
                <Card className={classes.card} >
       <CardHeader
         avatar={
-          <Avatar aria-label="recipe" className={classes.avatar}>
+          <Avatar aria-label="avatar" className={classes.avatar}>
             R
           </Avatar>
         }
